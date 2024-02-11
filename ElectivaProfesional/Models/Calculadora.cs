@@ -1,3 +1,4 @@
+
 namespace ElectivaProfesional.Models;
 
 public class Calculadora
