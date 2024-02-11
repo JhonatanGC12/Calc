@@ -1,4 +1,4 @@
-@model ElectivaProfesional.Controllers.Calculadora
+@model ElectivaProfesional.Models.Calculadora
 
 @{
     ViewData["Title"] = "Home Page";
@@ -6,4 +6,38 @@
 
 <div class="text-center">
     <h1 class="display-4">Calculadora</h1>
+
+    <form asp-controller="Calculadora" asp-action="Calcular">
+        
+        <label>
+            Operación 1
+        </label>
+        <input asp-for="Opr1">
+        <br>
+
+        <label>
+            Operación 2
+        </label>
+        <input asp-for="Opr2">
+        <br>
+
+        <label>Accion a escoger</label>
+        <select asp-for="Action">
+            
+            <option value=""></option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">x</option>
+            <option value="/">/</option>
+
+        </select>
+        <br>
+
+        <input type="submit" value="Respuesta">
+        
+    </form>
+               
+    <td>@Html.DisplayNameFor(model => model.Respuesta)</td>
+    <td>@Html.DisplayTextFor(model => model.Respuesta)</td>
 </div>
+    
