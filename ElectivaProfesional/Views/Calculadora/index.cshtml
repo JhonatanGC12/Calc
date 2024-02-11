@@ -3,12 +3,45 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+ <style>
+    label {
+        color: blue;
+        font-size: large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
 
+    input {
+         overflow: hidden;
+        text-decoration: none;
+        color: black;
+        padding: 10px 20px;
+        border-radius: 30px;
+        box-shadow: 
+         0 0 0 0 rgba(143, 64, 248, 0.5),
+        0 0 0 0 rgba(39, 200, 255, 0.5);
+        transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    input:hover{
+        transform: translate(0, -6px);
+    box-shadow: 10px -10px 25px 0 rgba(143, 64, 248, 0.5),
+               -10px 10px 25px 0 rgba(39, 200, 255, 0.5)
+    ;
+}
+    }
+ </style>
+ 
 <div class="text-center">
     <h1 class="display-4">Calculadora</h1>
 
     <form asp-controller="Calculadora" asp-action="Calcular">
-        
+        <label>
+            Calculadora
+        </label>
+        <br>
+
         <label>
             Operación 1
         </label>
@@ -33,11 +66,12 @@
         </select>
         <br>
 
-        <input type="submit" value="Respuesta">
+        <input type="submit" value="Calcular">
         
     </form>
                
     <td>@Html.DisplayNameFor(model => model.Respuesta)</td>
     <td>@Html.DisplayTextFor(model => model.Respuesta)</td>
+    
 </div>
     
