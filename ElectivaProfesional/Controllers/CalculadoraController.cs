@@ -32,14 +32,15 @@ public class CalculadoraController : Controller //Controlador que maneja las acc
             objCalculadora.Respuesta= objCalculadora.Opr1 * objCalculadora.Opr2; // La operación que le pedimos (en este es la multiplicación)
         }
 
-        if("/".Equals(objCalculadora.Action)){
-            objCalculadora.Respuesta= objCalculadora.Opr1 / objCalculadora.Opr2; // La operación que le pedimos (en este es división)
+     if ("/".Equals(objCalculadora.Action))
+    {
+        if (objCalculadora.Opr2 != 0)
+        {
+            objCalculadora.Respuesta = objCalculadora.Opr1 / objCalculadora.Opr2;
         }
-    
-        return View("index",objCalculadora);  // Devuelve la vista principal de la calculadora con el resultado de la operación.
-        
+       
     }
-
-}
-
+        return View("Index", objCalculadora);
+    }
+    }
 }
